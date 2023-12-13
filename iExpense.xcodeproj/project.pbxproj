@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3216E722B2A34C800184B07 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3216E712B2A34C800184B07 /* Expense.swift */; };
+		B3216E742B2A3F1A00184B07 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3216E732B2A3F1A00184B07 /* UsersView.swift */; };
 		B331620A2B0B71B8005A8184 /* iExpenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33162092B0B71B8005A8184 /* iExpenseApp.swift */; };
 		B331620C2B0B71B8005A8184 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B331620B2B0B71B8005A8184 /* ContentView.swift */; };
 		B331620E2B0B71B9005A8184 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B331620D2B0B71B9005A8184 /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B3216E712B2A34C800184B07 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		B3216E732B2A3F1A00184B07 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		B33162062B0B71B8005A8184 /* iExpense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iExpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33162092B0B71B8005A8184 /* iExpenseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseApp.swift; sourceTree = "<group>"; };
 		B331620B2B0B71B8005A8184 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,7 +61,9 @@
 			children = (
 				B33162092B0B71B8005A8184 /* iExpenseApp.swift */,
 				B331620B2B0B71B8005A8184 /* ContentView.swift */,
+				B3216E732B2A3F1A00184B07 /* UsersView.swift */,
 				B3845D022B0D30A500CC344D /* AddView.swift */,
+				B3216E712B2A34C800184B07 /* Expense.swift */,
 				B3D791BD2B29F5E300846F82 /* StyleView.swift */,
 				B331620D2B0B71B9005A8184 /* Assets.xcassets */,
 				B331620F2B0B71B9005A8184 /* Preview Content */,
@@ -147,6 +153,8 @@
 				B331620A2B0B71B8005A8184 /* iExpenseApp.swift in Sources */,
 				B3D791BE2B29F5E300846F82 /* StyleView.swift in Sources */,
 				B3845D032B0D30A600CC344D /* AddView.swift in Sources */,
+				B3216E722B2A34C800184B07 /* Expense.swift in Sources */,
+				B3216E742B2A3F1A00184B07 /* UsersView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

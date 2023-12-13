@@ -17,7 +17,7 @@ struct AddView: View {
     @State private var amount = 0.0
     @State private var title = "Name"
     
-    @Query var expenses: Expenses
+    @Query var expenses: [Expense]
     
     let types = ["Business", "Personal"]
     
@@ -37,8 +37,8 @@ struct AddView: View {
             }
             .toolbar {
                 Button("Save") {
-                    let item = ExpenseItem(name: title, type: type, amount: amount)
-                    expenses.items.append(item)
+                    let item = Expense(name: title, type: type, amount: amount)
+                    modelContext.insert(item)
                     dismiss()
                 }
             }

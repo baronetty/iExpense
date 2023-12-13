@@ -9,66 +9,24 @@ import SwiftData
 import SwiftUI
 
 
-struct ExpenseItem: Identifiable, Codable {
-    var id = UUID()
-    let name: String
-    let type: String
-    let amount: Double
-}
-
-@Model
-class Expenses {
-    var items = [ExpenseItem]() {
-        didSet {
-            if let encoded = try? JSONEncoder().encode(items) {
-                UserDefaults.standard.set(encoded, forKey: "Items")
-            }
-        }
-    }
-    
-    init() {
-        if let savedItems = UserDefaults.standard.data(forKey: "Items") {
-            if let decodedItems = try? JSONDecoder().decode([ExpenseItem].self, from: savedItems) {
-                items = decodedItems
-                return
-            }
-        }
-        items = []
-    }
-}
-
-
-
 struct ContentView: View {
     @Environment(\.modelContext) var modelContext
     
-    @Query private var expenses: Expenses
+    @Query var expenses: [Expense]
+    
     @State private var showingAddExpense = false
+    @State private var showingTypeOnly = false
+    @State private var sortOrder = [
+        SortDescriptor(\Expense.name),
+        SortDescriptor(\Expense.amount)
+    ]
     
     
     
     
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(expenses.items) { item in // need that for delete stuff later on
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text(item.name)
-                                    .font(.headline)
-                                
-                                Text(item.type)
-                            }
-                            
-                            
-                            Spacer()
-                            
-                            Text(item.amount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                                .amountStyle(amount: item.amount)
-                        }
-                }
-                .onDelete(perform: removeItems)
-            }
+        NavigationStack() {
+            UsersView(filter: showingTypeOnly ? "Personal" : "Business", sortOrder: sortOrder)
             .navigationTitle("iExpense")
             .toolbar {
                 NavigationLink {
@@ -76,14 +34,28 @@ struct ContentView: View {
                 } label: {
                     Label("Add Expense", systemImage: "plus")
                 }
+                
+                Button(showingTypeOnly ? "Show Personal" : "Show Everyone") {
+                    showingTypeOnly.toggle()
+                }
+                
+                Menu("Sort", systemImage: "arrow.up.arrow.down"){
+                    Picker("Sort", selection: $sortOrder) {
+                        Text("Sort by Name")
+                            .tag([
+                                SortDescriptor(\Expense.name),
+                                SortDescriptor(\Expense.amount)
+                            ])
+                        Text("Sort by Amount")
+                            .tag([
+                                SortDescriptor(\Expense.amount),
+                                SortDescriptor(\Expense.amount)
+                            ])
+                    }
+                }
             }
         }
     }
-    
-    func removeItems(at offsets: IndexSet) {
-        expenses.items.remove(atOffsets: offsets)
-    }
-    
 }
 
 #Preview {
