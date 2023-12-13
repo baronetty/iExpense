@@ -12,6 +12,7 @@
 		B331620E2B0B71B9005A8184 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B331620D2B0B71B9005A8184 /* Assets.xcassets */; };
 		B33162112B0B71B9005A8184 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B33162102B0B71B9005A8184 /* Preview Assets.xcassets */; };
 		B3845D032B0D30A600CC344D /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3845D022B0D30A500CC344D /* AddView.swift */; };
+		B3D791BE2B29F5E300846F82 /* StyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D791BD2B29F5E300846F82 /* StyleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		B331620D2B0B71B9005A8184 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B33162102B0B71B9005A8184 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B3845D022B0D30A500CC344D /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		B3D791BD2B29F5E300846F82 /* StyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				B33162092B0B71B8005A8184 /* iExpenseApp.swift */,
 				B331620B2B0B71B8005A8184 /* ContentView.swift */,
 				B3845D022B0D30A500CC344D /* AddView.swift */,
+				B3D791BD2B29F5E300846F82 /* StyleView.swift */,
 				B331620D2B0B71B9005A8184 /* Assets.xcassets */,
 				B331620F2B0B71B9005A8184 /* Preview Content */,
 			);
@@ -142,6 +145,7 @@
 			files = (
 				B331620C2B0B71B8005A8184 /* ContentView.swift in Sources */,
 				B331620A2B0B71B8005A8184 /* iExpenseApp.swift in Sources */,
+				B3D791BE2B29F5E300846F82 /* StyleView.swift in Sources */,
 				B3845D032B0D30A600CC344D /* AddView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

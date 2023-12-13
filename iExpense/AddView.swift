@@ -5,17 +5,19 @@
 //  Created by Leo  on 21.11.23.
 //
 
+import SwiftData
 import SwiftUI
 
 struct AddView: View {
     @Environment(\.dismiss) var dismiss
+    @Environment(\.modelContext) var modelContext
     
 //    @State private var name = ""
     @State private var type = "Personal"
     @State private var amount = 0.0
     @State private var title = "Name"
     
-    var expenses: Expenses
+    @Query var expenses: Expenses
     
     let types = ["Business", "Personal"]
     
@@ -48,5 +50,5 @@ struct AddView: View {
 }
 
 #Preview {
-    AddView(expenses: Expenses())
+    AddView()
 }

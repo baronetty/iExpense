@@ -5,6 +5,7 @@
 //  Created by Leo  on 20.11.23.
 //
 
+import SwiftData
 import SwiftUI
 
 
@@ -15,7 +16,7 @@ struct ExpenseItem: Identifiable, Codable {
     let amount: Double
 }
 
-@Observable
+@Model
 class Expenses {
     var items = [ExpenseItem]() {
         didSet {
@@ -38,35 +39,10 @@ class Expenses {
 
 
 
-struct Style: ViewModifier {
-    let amount: Double
-    
-    func body(content: Content) -> some View {
-        content.foregroundColor(amountColor)
-    }
-    
-    private var amountColor: Color {
-        switch amount {
-        case ..<10.0:
-            return .green
-        case ..<100.0:
-            return .blue
-        default:
-            return .red
-        }
-    }
-}
-
-extension View {
-    func amountStyle(amount: Double) -> some View {
-        self.modifier(Style(amount: amount))
-    }
-}
-
-
-
 struct ContentView: View {
-    @State private var expenses = Expenses()
+    @Environment(\.modelContext) var modelContext
+    
+    @Query private var expenses: Expenses
     @State private var showingAddExpense = false
     
     
@@ -96,7 +72,7 @@ struct ContentView: View {
             .navigationTitle("iExpense")
             .toolbar {
                 NavigationLink {
-                    AddView(expenses: expenses)
+                    AddView()
                 } label: {
                     Label("Add Expense", systemImage: "plus")
                 }
